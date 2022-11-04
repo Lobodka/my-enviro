@@ -1,0 +1,14 @@
+.zipButtons {
+    width: 370px;
+    margin: auto;
+    overflow: scroll;
+}
+
+.chosenZip {
+    margin: 1em;
+    
+    border: 6px solid #5a52fc;
+    border-radius: 10px;
+
+    background-color: white;
+}

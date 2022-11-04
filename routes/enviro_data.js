@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET data by ZIP */
-router.get("/:zip", async function(req, res, next) {
-  const sql = `SELECT * FROM enviro_data WHERE zip = ${req.params.zip}`;
+router.get("/zip/:zip", async function(req, res, next) {
+  const sql = `SELECT * FROM enviro_data WHERE zip = '${req.params.zip}'`;
 
   try {
     let result = await db(sql); // run the sql command: look for data by zip
@@ -32,30 +32,20 @@ router.get("/:zip", async function(req, res, next) {
 });
 
 /* GET data by city */
-router.get("/:zip/city", async function(req, res, next) {
-  // let cityName = req.params.city;
+router.get("/city/:city_name", async function(req, res, next) {
+  const sql = `SELECT * FROM enviro_data WHERE city LIKE '%${req.params.city_name}%'`; // gets cities that contain the name 
 
-  // const sql = `SELECT * FROM enviro_data WHERE city = ${cityName}`;
-
-  // try {
-  //   let result = await db(sql); // run the sql command: look for data by city
-  //   if (result.data.length === 0) {
-  //     // if the resulting array is empty, city doesn't exist: return error
-  //     res.status(404).send({ error: "City not found, please try again." });
-  //   } else {
-  //     res.status(200).send(result.data[0]); // send successful status and data to client
-  //   }
-  // } catch (error) {
-  //   // else send error if fails
-  //   res.status(500).send({ error: error.message });
-  // }
-
- // POKEMON code to get attacks of Pokemon with spec'd ID
-  const pokemon = data.find(e => +e.id === +req.params.id) 
-  if (pokemon) {
-    res.send(pokemon.attacks); 
-  } else {
-    res.status(404).send("Pokemon does not exist");
+  try {
+    let result = await db(sql); // run the sql command: look for data by city
+    if (result.data.length === 0) {
+      // if the resulting array is empty, city doesn't exist: return error
+      res.status(404).send({ error: "City not found, please try again." });
+    } else {
+      res.status(200).send(result.data); // send successful status and data to client
+    }
+  } catch (error) {
+    // else send error if fails
+    res.status(500).send({ error: error.message });
   }
 });
 
