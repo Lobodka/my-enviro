@@ -10,15 +10,6 @@ h2 {
 
 
 .zipButtons {
-    /* width: 800px;
-    margin: auto;
-    overflow: scroll;
-
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; */
-
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 5px;
