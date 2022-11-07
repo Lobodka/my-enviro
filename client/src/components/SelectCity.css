@@ -1,11 +1,16 @@
 .zipButtons {
-    width: 370px;
+    width: 800px;
     margin: auto;
     overflow: scroll;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .chosenZip {
-    margin: 1em;
+    margin: 0.5em;
     
     border: 6px solid #5a52fc;
     border-radius: 10px;
