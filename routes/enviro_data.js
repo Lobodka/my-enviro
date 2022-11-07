@@ -49,5 +49,55 @@ router.get("/city/:city_name", async function(req, res, next) {
   }
 });
 
+/* GET minimum values by city */
+router.get( "/city/:city_name/min", async function(req, res, next) {
+  const sql = `SELECT MIN(air),MIN(haz_cleanups),MIN(lead_paint),MIN(water) FROM enviro_data WHERE city LIKE '%${req.params.city_name}%'`; // how can I get this for more than one column?
+  
+  try {
+    let result = await db(sql); 
+    if (result.data.length === 0) {
+      res.status(404).send({ error: "City not found, please try again." });
+    } else {
+      res.status(200).send(result.data); 
+    }
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+/* GET maximum values by city */
+router.get( "/city/:city_name/max", async function(req, res, next) {
+  const sql = `SELECT MAX(air),MAX(haz_cleanups),MAX(lead_paint),MAX(water) FROM enviro_data WHERE city LIKE '%${req.params.city_name}%'`; 
+  
+  try {
+    let result = await db(sql); 
+    if (result.data.length === 0) {
+      res.status(404).send({ error: "City not found, please try again." });
+    } else {
+      res.status(200).send(result.data); 
+    }
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+/* GET average values by city */
+router.get( "/city/:city_name/avg", async function(req, res, next) {
+  const sql = `SELECT AVG(air),AVG(haz_cleanups),AVG(lead_paint),AVG(water) FROM enviro_data WHERE city LIKE '%${req.params.city_name}%'`; 
+  
+  try {
+    let result = await db(sql); 
+    if (result.data.length === 0) {
+      res.status(404).send({ error: "City not found, please try again." });
+    } else {
+      res.status(200).send(result.data); 
+    }
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+
+
 
 module.exports = router;

@@ -1,12 +1,28 @@
+.bigDiv {
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: larger;
+    text-align: center;
+}
+
+
 .zipButtons {
-    width: 800px;
+    /* width: 800px;
     margin: auto;
     overflow: scroll;
 
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    place-items: center;
 }
 
 .chosenZip {
@@ -17,3 +33,4 @@
 
     background-color: white;
 }
+

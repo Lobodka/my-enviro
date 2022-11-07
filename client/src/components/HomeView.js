@@ -53,7 +53,7 @@ function HomeView(props){
                         <div className="row">
                             <h4>Learn about your air, water, home, and neighborhood - and how to protect yourself. Knowledge is power!</h4>
                         </div>
-                        <div className="row">
+                        <div className="inputRow">
 
                             {/* ZIP input */}
                             <form onSubmit={handleSubmit}>
@@ -63,8 +63,8 @@ function HomeView(props){
                              
                              {/* city input */}
                             <form onSubmit={handleSubmit2}>
-                                <input  type = "text" onChange={(e) => handleChange2(e)} placeholder="Enter city here"></input>
-                                <button type="submit" class="btn btn-primary">Search</button>
+                                <input  className="cityInput" type = "text" onChange={(e) => handleChange2(e)} placeholder="Enter city here"></input>
+                                <button className="cityButton btn btn-primary" type="submit">Search</button>
                             </form>
                         </div>     
                     </div>

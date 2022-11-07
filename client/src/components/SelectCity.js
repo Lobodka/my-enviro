@@ -13,10 +13,12 @@ function SelectCity(props) {
 
     return(
         <div className="bigDiv">
-            <h1>We found these ZIP codes for your city:</h1>
+            <h1>We found these ZIP codes for your city</h1>
+            <h2>Please select your ZIP code</h2>
 
              <div className="zipButtons">
-            {props.allZips.map(city => <button className="chosenZip" onClick={e => handleClick(city.zip)} type="button">{city.zip}</button>)}
+            {props.allZips.map(city => 
+            <button className="chosenZip" onClick={e => handleClick(city.zip)} type="button">{city.zip}</button>)}
             </div>
         
         </div>

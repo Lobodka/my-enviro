@@ -6,6 +6,7 @@ import FeaturedIndicatorView from './components/FeaturedIndicatorView.js';
 import IndicatorView from './components/IndicatorView.js';
 import HomeView from './components/HomeView.js';
 import SelectCity from './components/SelectCity.js';
+import CalcView from './components/CalcView.js';
 
 function App() {
   
@@ -96,6 +97,18 @@ function App() {
     navigate("/indicators") // go to indicators page
    }
 
+   /* add function for min/max/avg from back end */
+  //  async function getCityMin(cityInput) {
+  //   try {
+  //     let response = await fetch(`/enviro_data/city/${cityInput}/min`);
+  //     if (response.ok) {
+  //       let data = await response.json();
+
+  //     }
+  //   }
+  //  }
+
+
   return (
     <div className="App">
       {/* show nav bar and have access to front-end routes from every location in app */}
@@ -139,6 +152,14 @@ function App() {
         getAllIndicators={getAllIndicators} 
         sendZip={sendZip}
         />
+
+        // <Route
+        // path="/indicators/city/:city/air/min"
+        // element={<CalcView
+        // />
+        // }
+        // />
+        
         }
         />
       </Routes>
