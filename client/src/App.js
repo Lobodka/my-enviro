@@ -6,7 +6,6 @@ import FeaturedIndicatorView from './components/FeaturedIndicatorView.js';
 import IndicatorView from './components/IndicatorView.js';
 import HomeView from './components/HomeView.js';
 import SelectCity from './components/SelectCity.js';
-// import CityStats from './components/CityStats.js';
 
 function App() {
   
