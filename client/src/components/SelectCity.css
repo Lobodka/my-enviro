@@ -1,4 +1,4 @@
-.bigDiv {
+.BigDivEnergy {
     margin-top: 10px;
     padding-bottom: 20px;
 }
@@ -10,7 +10,7 @@ h2 {
 
 
 .zipButtons {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 5px;
     place-items: center;
@@ -25,3 +25,22 @@ h2 {
     background-color: white;
 }
 
+.cityStats {
+    width: auto;
+    text-align: center;
+
+    background-color: rgba(122, 165, 224, 0.372);   
+    background-size: auto;
+}
+
+.MinLevels {
+    color:#1A752A;
+}
+
+.MaxLevels {
+    color: #C23717;
+}
+
+.AvgLevels {
+    color: #dfc63c;
+}
