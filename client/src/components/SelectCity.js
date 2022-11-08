@@ -45,27 +45,27 @@ function SelectCity(props) {
                 {cityStats.map(stat => 
                 <p>
                    <span className="MinLevels">
-                   Minimum levels for... <br/>
+                   <b>Minimum levels for... </b><br/>
                    Air pollution: {stat.min_air} <br/>
                    Amount of hazardous waste cleanup sites: {stat.min_haz_cleanups} <br/>
                    Likelihood of lead paint in houses: {stat.min_lead_paint}% <br/>
                    Water contamination: {stat.min_water}% <br/>
                    </span>
-                  
-                   <span className="MaxLevels">
-                   Maximum levels for... <br/>
-                   Air pollution: {stat.max_air} <br/>
-                   Amount of hazardous waste cleanup sites: {stat.max_haz_cleanups} <br/>
-                   Likelihood of lead paint in houses: {stat.max_lead_paint}% <br/>
-                   Water contamination level: {stat.max_water}% <br/>
-                   </span>
 
                    <span className="AvgLevels">
-                   Average levels for... <br/>
+                   <b>Average levels for... </b><br/>
                    Air pollution: {stat.avg_air} <br/>
                    Amount of hazardous waste cleanup sites: {stat.avg_haz_cleanups} <br/>
                    Likelihood of lead paint in houses: {stat.avg_lead_paint}% <br/>
                    Water contamination level: {stat.avg_water}% 
+                   </span>
+
+                   <span className="MaxLevels">
+                   <b>Maximum levels for... </b><br/>
+                   Air pollution: {stat.max_air} <br/>
+                   Amount of hazardous waste cleanup sites: {stat.max_haz_cleanups} <br/>
+                   Likelihood of lead paint in houses: {stat.max_lead_paint}% <br/>
+                   Water contamination level: {stat.max_water}% <br/>
                    </span>
                 </p>
                 )}
