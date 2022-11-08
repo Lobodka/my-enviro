@@ -57,7 +57,7 @@ function SelectCity(props) {
                    Air pollution: {stat.avg_air} <br/>
                    Amount of hazardous waste cleanup sites: {stat.avg_haz_cleanups} <br/>
                    Likelihood of lead paint in houses: {stat.avg_lead_paint}% <br/>
-                   Water contamination level: {stat.avg_water}% 
+                   Water contamination level: {stat.avg_water}% <br/>
                    </span>
 
                    <span className="MaxLevels">
@@ -65,7 +65,7 @@ function SelectCity(props) {
                    Air pollution: {stat.max_air} <br/>
                    Amount of hazardous waste cleanup sites: {stat.max_haz_cleanups} <br/>
                    Likelihood of lead paint in houses: {stat.max_lead_paint}% <br/>
-                   Water contamination level: {stat.max_water}% <br/>
+                   Water contamination level: {stat.max_water}% 
                    </span>
                 </p>
                 )}

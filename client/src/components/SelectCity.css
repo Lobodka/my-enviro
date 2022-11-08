@@ -37,14 +37,8 @@ h2 {
 .MinLevels {
     display: block;
     color: #167508;
-    padding-bottom: 20px;
-    padding-top: 5px;
-}
-
-.MaxLevels {
-    display: block;
-    color: #C23717;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .AvgLevels {
@@ -52,3 +46,11 @@ h2 {
     color: #F5D625;
     padding-bottom: 10px;
 }
+
+
+.MaxLevels {
+    display: block;
+    color: #C23717;
+    padding-bottom: 15px;
+}
+
