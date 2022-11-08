@@ -51,10 +51,10 @@ router.get("/city/:city_name", async function(req, res, next) {
 
 /* GET all minimum/maximum/average values by city */
 router.get( "/city/:city_name/citystats", async function(req, res, next) {
-  const sql = `SELECT MIN(air) AS min_air,MAX(air) AS max_air,ROUND(AVG(air)) AS avg_air, 
-                      MIN(haz_cleanups) AS min_haz_cleanups,MAX(haz_cleanups) AS max_haz_cleanups,ROUND(AVG(haz_cleanups)) AS avg_haz_cleanups,
-                      MIN(lead_paint) AS min_lead_paint,MAX(lead_paint) AS max_lead_paint,ROUND(AVG(lead_paint)) AS avg_lead_paint,
-                      MIN(water) AS min_water,MAX(water) AS max_water,ROUND(AVG(water)) AS avg_water
+  const sql = `SELECT ROUND(MIN(air)) AS min_air,ROUND(MAX(air)) AS max_air,ROUND(AVG(air)) AS avg_air, 
+                      ROUND(MIN(haz_cleanups)) AS min_haz_cleanups,ROUND(MAX(haz_cleanups)) AS max_haz_cleanups,ROUND(AVG(haz_cleanups)) AS avg_haz_cleanups,
+                      ROUND(MIN(lead_paint)) AS min_lead_paint,ROUND(MAX(lead_paint)) AS max_lead_paint,ROUND(AVG(lead_paint)) AS avg_lead_paint,
+                      ROUND(MIN(water)) AS min_water,ROUND(MAX(water)) AS max_water,ROUND(AVG(water)) AS avg_water
                       FROM enviro_data WHERE city LIKE '%${req.params.city_name}%'`; 
   try {
     let result = await db(sql); 
