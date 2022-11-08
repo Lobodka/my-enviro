@@ -6,6 +6,7 @@ import FeaturedIndicatorView from './components/FeaturedIndicatorView.js';
 import IndicatorView from './components/IndicatorView.js';
 import HomeView from './components/HomeView.js';
 import SelectCity from './components/SelectCity.js';
+// import CityStats from './components/CityStats.js';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
   const [allZips, setAllZips] = useState([]); // state for ZIP code that user selects after putting in a city on HomeView
   const [allIndicators, setAllIndicators] = useState({});
   const [featIndicator, setFeatIndicator] = useState({});
+  const [selectedCityInput, setSelectedCityInput] = useState("");
 
   const navigate = useNavigate();
 
@@ -76,6 +78,7 @@ function App() {
 
   // get city's enviro_data based on city entry on HomeView
    async function getCityData(cityInput) {
+    setSelectedCityInput(cityInput); // added to try out
     try {
       let response = await fetch(`/enviro_data/city/${cityInput}`);
       if (response.ok) {
@@ -95,18 +98,6 @@ function App() {
     getLocalData(zipClick); // pass zipInput to parent (App.js), where it will be used to getLocalData
     navigate("/indicators") // go to indicators page
    }
-
-  //  /* add function for min/max/avg from back end */
-  //  async function getCityMin(cityInput) {
-  //   try {
-  //     let response = await fetch(`/enviro_data/city/${cityInput}/min`);
-  //     if (response.ok) {
-  //       let data = await response.json();
-        
-  //     }
-  //   }
-  //  }
-
 
   return (
     <div className="App">
@@ -150,6 +141,7 @@ function App() {
         featIndicator={featIndicator} 
         getAllIndicators={getAllIndicators} 
         sendZip={sendZip}
+        selectedCityInput={selectedCityInput}
         />
         }
         />
