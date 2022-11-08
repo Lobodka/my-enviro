@@ -26,21 +26,29 @@ h2 {
 }
 
 .cityStats {
-    width: auto;
+    width: 25%;
     text-align: center;
+    margin: auto;
 
-    background-color: rgba(122, 165, 224, 0.372);   
-    background-size: auto;
+    background-color: rgba(154, 187, 234, 0.372);   
+    background-size: cover;
 }
 
 .MinLevels {
-    color:#1A752A;
+    display: block;
+    color: #167508;
+    padding-bottom: 20px;
+    padding-top: 5px;
 }
 
 .MaxLevels {
+    display: block;
     color: #C23717;
+    padding-bottom: 20px;
 }
 
 .AvgLevels {
-    color: #dfc63c;
+    display: block;
+    color: #F5D625;
+    padding-bottom: 10px;
 }
